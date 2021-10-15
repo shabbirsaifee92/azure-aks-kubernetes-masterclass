@@ -23,6 +23,14 @@ terraform {
       version = "~>3.0"
     }
   }
+
+  # 3. Terraform Remote State Storage with Azure Storage Account
+  backend "azurerm" {
+    resource_group_name = "terraform-storage-rg"
+    storage_account_name = "terraformstateclass"
+    container_name = "tfstatefiles"
+    key = "terraform.tfstate"
+  }
 }
 
 # 2. Terraform Provider Block for AzureRM
