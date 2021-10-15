@@ -8,23 +8,23 @@
 # 2. Azure Resource Group Name 
 # 3. Azure AKS Environment Name (Dev, QA, Prod)
 
-# Azure Location
+# 1. Azure Location (CentralUS)
 variable "location" {
-  type = string
-  description = "Azure Region where all these resources will be provisioned"
   default = "Central US"
-}
-
-# Azure Resource Group Name
-variable "resource_group_name" {
+  description = "This will be the location where all resources will be created"
   type = string
-  description = "This variable defines the Resource Group"
-  default = "terraform-aks"
 }
 
-# Azure AKS Environment Name
+# 2. Azure Resource Group Name 
+variable "resource_group_name" {
+  default = "terraform-aks"
+  description = "This variable defines the Resource Group"
+  type = string
+}
+
+# 3. Azure AKS Environment Name (Dev, QA, Prod)
 variable "environment" {
-  type = string  
-  description = "This variable defines the Environment"  
   default = "dev"
+  description = "This variable defines the Environment"
+  type = string
 }
